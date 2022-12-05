@@ -1,10 +1,10 @@
-import { DSix } from './Dsix.mjs'
+import { Die } from './Dsix.mjs'
 
 export class Dice {
-    constructor() {
+    constructor(numDice = 5,numFaces = 6) {
         this.dice = []
-        for (let i = 0; i < 5; i++) {
-            this.dice.push(new DSix());
+        for (let i = 0; i < numDice; i++) {
+            this.dice.push(new Die(numFaces));
         }
     }
 

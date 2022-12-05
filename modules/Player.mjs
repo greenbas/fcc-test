@@ -1,9 +1,9 @@
 import { Dice } from "./Dice.mjs";
 
 export class Player {
-    constructor(name) {
+    constructor(name,numDice = 5) {
         this.name = name;
-        this.dice = new Dice();
+        this.dice = new Dice(numDice);
         this.score = 0;
     }
 
@@ -20,7 +20,5 @@ export class Player {
             this.dice.dropDice()
             rounds++;
         }
-        console.log(`Game Finished in ${rounds} rounds`)
-        console.log(`Score: ${this.score}`)
     }
 }

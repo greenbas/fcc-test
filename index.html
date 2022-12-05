@@ -12,23 +12,9 @@
   import {Simulation} from './modules/Simulation.mjs'
 
   function main() {
-    
-    let player = new Player("Steve")
-    let scores = {}
+   let sim = new Simulation(10000);
 
-    for(let i = 0; i < 10000; i++) {
-        player.playRound();
-        if(scores.hasOwnProperty(player.score)) {
-            scores[player.score]++
-        } else {
-            scores[player.score] = 1;
-        }
-        player.resetGame();
-    }
-
-    for(let num in scores) {
-        console.log(`Total ${num} occurs ${scores[num]} times`)
-    }
+   console.log(sim.runSimulation());
 
   };
 

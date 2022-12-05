@@ -1,14 +1,15 @@
-import {Player} from './modules/Player.mjs'
+import {Player} from './Player.mjs'
 
 export class Simulation {
-    constructor(simNum) {
+    constructor(simNum, numDice = 5) {
         this.simNum = simNum
+        this.numDice = numDice
     }
 
     runSimulation() {
         let report = ""
 
-        let player = new Player("Nonny")
+        let player = new Player("Nonny",this.numDice)
         let scores = {}
 
         for(let i = 0; i < this.simNum; i++) {
@@ -25,6 +26,7 @@ export class Simulation {
             report += `Total ${num} occurs ${scores[num]} times\n`
         }
 
+        return report;
     }
 
 }
